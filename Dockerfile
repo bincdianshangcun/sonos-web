@@ -17,10 +17,7 @@ RUN rm -rf client
 
 WORKDIR /sonos-web/server
 RUN npm install && \
-	npm install https://github.com/bincdianshangcun/node-sonos#v1.15.0-test && \
-    mv .env.production .env && \
-    printf "\nREGION=EU\n" >> .env && \
-    printf "\nENHANCE_METADATA=true\n" >> .env
+	npm install https://github.com/bincdianshangcun/node-sonos#v1.15.0-test
 
 EXPOSE 5050
 CMD npm start
