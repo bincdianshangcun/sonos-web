@@ -88,6 +88,12 @@ class SonosNetwork {
         device.deviceDescription().then((description) => {
           device.name = description.roomName;
           device.displayName = description.displayName;
+          console.log(device)
+          const whitelist = process.env.WHITELIST.split(",");
+          if (!whitelist.includes(device.displayName)) {
+            console.log(`${device.displayName} is not whitelisted`)
+            return;
+          }
           if (process.env.REGION) {
             if (process.env.REGION in SpotifyRegion) {
               device.setSpotifyRegion(SpotifyRegion[process.env.REGION]);
