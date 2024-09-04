@@ -36,6 +36,7 @@ do_start() {
     --restart unless-stopped \
     --net=host \
     --name "$container_name" \
+    -e WHITELIST="Connect" \
     --replace \
     -t webcliff/sonos-web:latest
 }
