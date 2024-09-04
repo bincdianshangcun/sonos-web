@@ -17,7 +17,8 @@ RUN rm -rf client
 
 WORKDIR /sonos-web/server
 RUN npm install && \
-	npm install https://github.com/bincdianshangcun/node-sonos#v1.15.0-test
+	npm install https://github.com/bincdianshangcun/node-sonos#v1.15.0-test && \
+    mv .env.s1 .env
 
 EXPOSE 5050
 CMD npm start

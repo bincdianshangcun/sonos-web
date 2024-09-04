@@ -36,7 +36,7 @@ do_start() {
     --restart unless-stopped \
     --net=host \
     --name "$container_name" \
-    -v $MySrcDir/sonos-web/.env.s1 /sonos-web/server/.env \
+    --replace \
     -t webcliff/sonos-web:latest
 }
 
