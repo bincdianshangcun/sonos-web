@@ -35,7 +35,6 @@ do_start_s1() {
         -e PORT=5050 \
         -e SONOS_LISTENER_PORT=4000 \
         -e WHITELIST="Connect" \
-        --replace \
         -t webcliff/sonos-web:latest
 }
 
@@ -56,7 +55,6 @@ do_start_s2() {
         -e PORT=5051 \
         -e SONOS_LISTENER_PORT=4001 \
         -e WHITELIST="Move,Sub,Playbar,Play:5" \
-        --replace \
         -t webcliff/sonos-web:latest
 }
 
