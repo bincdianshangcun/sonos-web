@@ -52,9 +52,7 @@ do_start_s2() {
         --restart unless-stopped \
         --net=host \
         --name "$container_name" \
-        -e PORT=5051 \
-        -e SONOS_LISTENER_PORT=4001 \
-        -e WHITELIST="Move,Sub,Playbar,Play:5" \
+        -e WHITELIST="ALL" \
         -t webcliff/sonos-web:latest
 }
 
